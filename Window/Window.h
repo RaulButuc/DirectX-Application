@@ -21,13 +21,13 @@ namespace DirectXApplication {
   class Window {
 
     public:
-  	  Window(HINSTANCE, UINT, UINT, string);
-		  int Run();
-		  virtual bool Init();
-		  virtual void Update(float) = 0;
+      Window(HINSTANCE, UINT, UINT, string);
+      int Run();
+      virtual bool Init();
+      virtual void Update(float) = 0;
       virtual void Render(float) = 0;
-		  virtual LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
-		  virtual ~Window();
+      virtual LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
+      virtual ~Window();
 
     protected:
       // Win32 attributes declaration.
