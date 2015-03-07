@@ -3,7 +3,7 @@
  *  Purpose: Build a standard WIN32 window.
  *
  *  @author Raul Butuc
- *  @version 1.0.1 07/03/2015
+ *  @version 1.0.2 07/03/2015
  */
 
 #include "Window.h"
@@ -132,7 +132,7 @@ namespace DirectXApplication {
 	 *  First part of the main framework method that initialises the application window.
 	 *  Deals with the main window display part.
 	 *
-	 *  @return A boolean representing the success/failure state received after executing the init methods.
+	 *  @return A boolean representing the success/failure state received after attempting to initialise the window.
 	 */
 	bool Window::InitWindow() {
 		WNDCLASSEX wcex;
@@ -186,7 +186,7 @@ namespace DirectXApplication {
 	 *  Second part of the main framework method that initialises the application window.
 	 *  Deals with the DirectX display part.
 	 *
-	 *  @return A boolean representing the success/failure state received after executing the init methods.
+	 *  @return A boolean representing the success/failure state received after attempting to initialise the window.
 	 */
 	bool Window::InitDirect3D() {
 		UINT createDeviceFlags = 0;
