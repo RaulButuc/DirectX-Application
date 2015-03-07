@@ -4,14 +4,15 @@
 
 namespace DirectXApplication {
 
-	class TestApplication : public Window {
+	class DirectXWindow : public Window {
 
 	public:
-		TestApplication(HINSTANCE);
+		DirectXWindow(HINSTANCE, UINT, UINT);
+		DirectXWindow(HINSTANCE, UINT, UINT, string);
 		bool Init() override;
 		void Update(float) override;
 		void Render(float) override;
-		~TestApplication();
+		~DirectXWindow();
 
 	};
 
