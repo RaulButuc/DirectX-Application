@@ -3,7 +3,7 @@
  *  Purpose: Build a standard WIN32 window.
  *
  *  @author Raul Butuc
- *  @version 1.0.1 07/03/2015
+ *  @version 1.0.2 07/03/2015
  */
 
 #pragma once
