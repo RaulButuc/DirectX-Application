@@ -3,7 +3,7 @@
  *  Purpose: Run the application and test its functionality.
  *
  *  @author Raul Butuc
- *  @version 1.0.0 06/03/2015
+ *  @version 1.0.1 07/03/2015
  */
 
 #include "DirectXWindow.h"
