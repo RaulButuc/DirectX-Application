@@ -1,9 +1,16 @@
+/**
+ *  DirectXWindow.cpp
+ *  Purpose: Build a DirectX managed window.
+ *
+ *  @author Raul Butuc
+ *  @version 1.0.0 06/03/2015
+ */
+
 #include "DirectXWindow.h"
 
 namespace DirectXApplication {
 	
-	DirectXWindow::DirectXWindow(HINSTANCE hInstance, UINT ClientWidth, UINT ClientHeight) :
-		Window(hInstance, ClientWidth, ClientHeight) {}
+	DirectXWindow::DirectXWindow(HINSTANCE hInstance) : Window(hInstance) {}
 
 	DirectXWindow::DirectXWindow(HINSTANCE hInstance, UINT ClientWidth, UINT ClientHeight, string AppTitle) :
 		Window(hInstance, ClientWidth, ClientHeight, AppTitle) {}
