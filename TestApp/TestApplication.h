@@ -9,8 +9,8 @@ namespace DirectXApplication {
 	public:
 		TestApplication(HINSTANCE);
 		bool Init() override;
-		void Update(float dt) override;
-		void Render(float dt) override;
+		void Update(float) override;
+		void Render(float) override;
 		~TestApplication();
 
 	};

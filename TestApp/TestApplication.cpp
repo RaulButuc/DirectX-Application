@@ -9,11 +9,11 @@ namespace DirectXApplication {
 	}
 
 	void TestApplication::Update(float dt) {
-
+		// @TODO: Create the Update function, given delta t.
 	}
 
 	void TestApplication::Render(float dt) {
-
+		// @TODO: Create the Render function, given delta t.
 	}
 
 	TestApplication::~TestApplication() {}
