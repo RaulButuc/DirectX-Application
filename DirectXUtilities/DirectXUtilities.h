@@ -15,42 +15,42 @@
 
 namespace MemoryManagement {
 
-	/**
-	 *  Safely deallocate a pointer from memory after being used.
-	 *
-	 *  @param _ptr The pointer of generic type _PtrT that is to be deallocated.
-	 */
-	template <typename _PtrT>
-	void SafeDelete(_PtrT& _ptr) {
-		if (_ptr) {
-			delete _ptr;
-			_ptr = nullptr;
-		}
-	}
+  /**
+   *  Safely deallocate a pointer from memory after being used.
+   *
+   *  @param _ptr The pointer of generic type _PtrT that is to be deallocated.
+   */
+  template <typename _PtrT>
+  void SafeDelete(_PtrT& _ptr) {
+    if (_ptr) {
+      delete _ptr;
+      _ptr = nullptr;
+    }
+  }
 
-	/**
-	 *  Safely deallocate an array from memory after being used.
-	 *
-	 *  @param _ptr The pointer of generic type _PtrT that is to be deallocated.
-	 */
-	template <typename _PtrT>
-	void SafeDeleteArr(_PtrT& _ptr) {
-		if (_ptr) {
-			delete[] _ptr;
-			_ptr = nullptr;
-		}
-	}
+  /**
+   *  Safely deallocate an array from memory after being used.
+   *
+   *  @param _ptr The pointer of generic type _PtrT that is to be deallocated.
+   */
+  template <typename _PtrT>
+  void SafeDeleteArr(_PtrT& _ptr) {
+    if (_ptr) {
+      delete[] _ptr;
+      _ptr = nullptr;
+    }
+  }
 
-	/**
-	 *  Safely release a pointer from memory after being used.
-	 *
-	 *  @param _ptr The pointer of generic type _PtrT that is to be released.
-	 */
-	template <typename _PtrT>
-	void SafeRelease(_PtrT& _ptr) {
-		if (_ptr) {
-			_ptr->Release();
-			_ptr = nullptr;
-		}
-	}
+  /**
+   *  Safely release a pointer from memory after being used.
+   *
+   *  @param _ptr The pointer of generic type _PtrT that is to be released.
+   */
+  template <typename _PtrT>
+  void SafeRelease(_PtrT& _ptr) {
+    if (_ptr) {
+      _ptr->Release();
+      _ptr = nullptr;
+    }
+  }
 }

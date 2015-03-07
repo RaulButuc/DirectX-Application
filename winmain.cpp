@@ -9,11 +9,11 @@
 #include "DirectXWindow.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
-	DirectXApplication::DirectXWindow DXApp(hInstance, 1280, 720, "DirectX11 Application");
+  DirectXApplication::DirectXWindow DXApp(hInstance, 1280, 720, "DirectX11 Application");
 
-	if (!DXApp.Init()) {
-		return 1;
-	}
+  if (!DXApp.Init()) {
+    return 1;
+  }
 
-	return DXApp.Run();
+  return DXApp.Run();
 }
