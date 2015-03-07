@@ -12,6 +12,6 @@ namespace StringHelper {
 		return toWString(str).c_str();
 	}
 
-	StringConverter::~StringConverter()	{}
+	StringConverter::~StringConverter() {}
 
 }
