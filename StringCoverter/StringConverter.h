@@ -25,7 +25,7 @@ namespace StringHelper {
 	};
 
 	/**
-	 *  Convert a string of type _StrT to a string of _StrS.
+	 *  Convert a string of type _StrT to a string of type _StrS.
 	 *
 	 *  @param _str The string of type _StrT that is to be converted.
 	 *  @return The converted string into the desired format (assuming long pointer constant type).
