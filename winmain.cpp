@@ -1,7 +1,7 @@
-#include "TestApplication.h"
+#include "DirectXWindow.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
-	DirectXApplication::TestApplication tApp(hInstance);
+	DirectXApplication::DirectXWindow tApp(hInstance, 800, 600, "DirectX11 Application");
 
 	if (!tApp.Init()) {
 		return 1;
