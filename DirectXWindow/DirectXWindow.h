@@ -1,10 +1,10 @@
 /**
-*  DirectXWindow.h
-*  Purpose: Build a DirectX managed window.
-*
-*  @author Raul Butuc
-*  @version 1.0.1 07/03/2015
-*/
+ *  DirectXWindow.h
+ *  Purpose: Build a DirectX managed window.
+ *
+ *  @author Raul Butuc
+ *  @version 1.0.1 07/03/2015
+ */
 
 #pragma once
 
