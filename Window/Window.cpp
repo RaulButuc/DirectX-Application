@@ -71,10 +71,10 @@ namespace DirectXApplication {
 		wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wcex.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
 		wcex.lpszMenuName = NULL;
-		wcex.lpszClassName = L"DXAPPWNDCLASS";
+		wcex.lpszClassName = StringConverter::toLPCWSTR("DXAPPWNDCLASS");
 
 		if (!RegisterClassEx(&wcex)) {
-			OutputDebugString(L"Failed to create window class\n");
+			OutputDebugString(StringConverter::toLPCWSTR("Failed to create window class\n"));
 			return false;
 		}
 
@@ -86,13 +86,12 @@ namespace DirectXApplication {
 		UINT xCoord = GetSystemMetrics(SM_CXSCREEN) / 2 - width / 2;
 		UINT yCoord = GetSystemMetrics(SM_CYSCREEN) / 2 - height / 2;
 
-		wstring m_hAppTitle = wstring(m_AppTitle.begin(), m_AppTitle.end());
-
-		m_hAppWnd = CreateWindow(L"DXAPPWNDCLASS", m_hAppTitle.c_str(), m_WndStyle,
+		m_hAppWnd = CreateWindow(StringConverter::toLPCWSTR("DXAPPWNDCLASS"),
+			StringConverter::toLPCWSTR(m_AppTitle), m_WndStyle,
 			xCoord, yCoord, width, height, NULL, NULL, m_hAppInstance, NULL);
 
 		if (!m_hAppWnd) {
-			OutputDebugString(L"Failed to create window\n");
+			OutputDebugString(StringConverter::toLPCWSTR("Failed to create window\n"));
 			return false;
 		}
 
