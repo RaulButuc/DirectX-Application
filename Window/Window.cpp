@@ -1,14 +1,22 @@
+/**
+ *  Window.cpp
+ *  Purpose: Build a standard WIN32 window.
+ *
+ *  @author Raul Butuc
+ *  @version 1.0.0 06/03/2015
+ */
+
 #include "Window.h"
 
 namespace DirectXApplication {
 
 	Window* g_pApp = nullptr;
 
-	Window::Window(HINSTANCE hInstance, UINT ClientWidth, UINT ClientHeight) {
+	Window::Window(HINSTANCE hInstance) {
 		m_hAppInstance = hInstance;
 		m_hAppWnd = NULL;
-		m_ClientWidth = ClientWidth;
-		m_ClientHeight = ClientHeight;
+		m_ClientWidth = 800;
+		m_ClientHeight = 600;
 		m_AppTitle = "Title";
 		m_WndStyle = WS_OVERLAPPEDWINDOW;
 		g_pApp = this;
@@ -81,10 +89,11 @@ namespace DirectXApplication {
 		wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wcex.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
 		wcex.lpszMenuName = NULL;
-		wcex.lpszClassName = StringConverter::toLPCWSTR("DXAPPWNDCLASS");
+		wcex.lpszClassName = StringConverter<LPCWSTR, string>::convert("DXAPPWNDCLASS");;
 
 		if (!RegisterClassEx(&wcex)) {
-			OutputDebugString(StringConverter::toLPCWSTR("Failed to create window class\n"));
+			OutputDebugString(StringConverter<LPCWSTR, string>::convert("Failed to create window class\n"));
+
 			return false;
 		}
 
@@ -96,12 +105,15 @@ namespace DirectXApplication {
 		UINT xCoord = GetSystemMetrics(SM_CXSCREEN) / 2 - width / 2;
 		UINT yCoord = GetSystemMetrics(SM_CYSCREEN) / 2 - height / 2;
 
-		m_hAppWnd = CreateWindow(StringConverter::toLPCWSTR("DXAPPWNDCLASS"),
-			StringConverter::toLPCWSTR(m_AppTitle), m_WndStyle,
+		LPCWSTR lpClassName = StringConverter<LPCWSTR, string>::convert("DXAPPWNDCLASS");
+		LPCWSTR lpWindowName = StringConverter<LPCWSTR, string>::convert(m_AppTitle);
+
+		m_hAppWnd = CreateWindow(lpClassName, lpWindowName, m_WndStyle,
 			xCoord, yCoord, width, height, NULL, NULL, m_hAppInstance, NULL);
 
 		if (!m_hAppWnd) {
-			OutputDebugString(StringConverter::toLPCWSTR("Failed to create window\n"));
+			OutputDebugString(StringConverter<LPCWSTR, string>::convert("Failed to create window\n"));
+
 			return false;
 		}
 

@@ -1,3 +1,11 @@
+/**
+ *  Window.h
+ *  Purpose: Build a standard WIN32 window.
+ *
+ *  @author Raul Butuc
+ *  @version 1.0.0 06/03/2015
+ */
+
 #pragma once
 
 #define WIN32_LEAN_AND_MEAN
@@ -12,7 +20,7 @@ namespace DirectXApplication {
 	class Window {
 
 	public:
-		Window(HINSTANCE, UINT, UINT);
+		Window(HINSTANCE);
 		Window(HINSTANCE, UINT, UINT, string);
 		int Run();
 		virtual bool Init();
