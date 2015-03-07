@@ -4,12 +4,22 @@ namespace DirectXApplication {
 
 	Window* g_pApp = nullptr;
 
-	Window::Window(HINSTANCE hInstance) {
+	Window::Window(HINSTANCE hInstance, UINT ClientWidth, UINT ClientHeight) {
 		m_hAppInstance = hInstance;
 		m_hAppWnd = NULL;
-		m_ClientWidth = 800;
-		m_ClientHeight = 600;
-		m_AppTitle = "DirectX 11 Application";
+		m_ClientWidth = ClientWidth;
+		m_ClientHeight = ClientHeight;
+		m_AppTitle = "Title";
+		m_WndStyle = WS_OVERLAPPEDWINDOW;
+		g_pApp = this;
+	}
+
+	Window::Window(HINSTANCE hInstance, UINT ClientWidth, UINT ClientHeight, string AppTitle) {
+		m_hAppInstance = hInstance;
+		m_hAppWnd = NULL;
+		m_ClientWidth = ClientWidth;
+		m_ClientHeight = ClientHeight;
+		m_AppTitle = AppTitle;
 		m_WndStyle = WS_OVERLAPPEDWINDOW;
 		g_pApp = this;
 	}

@@ -12,7 +12,8 @@ namespace DirectXApplication {
 	class Window {
 
 	public:
-		Window(HINSTANCE);
+		Window(HINSTANCE, UINT, UINT);
+		Window(HINSTANCE, UINT, UINT, string);
 		int Run();
 		virtual bool Init();
 		virtual void Update(float) = 0;
