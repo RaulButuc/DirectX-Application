@@ -1,6 +1,6 @@
 ﻿/**
  *  Window.cpp
- *  Purpose: Build a standard WIN32 window.
+ *  Purpose: Build a DirectX supported WIN32 window.
  *
  *  @author Raul Butuc
  *  @version 1.0.2 07/03/2015
