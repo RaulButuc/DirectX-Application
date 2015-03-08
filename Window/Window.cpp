@@ -38,8 +38,9 @@ namespace DirectXApplication {
 
   /**
    *  Run the window and fetch the window message as long as not being told otherwise.
+   *  Main application loop.
    *
-   *  @return An integer representing the state
+   *  @return An integer representing the state message.
    */
   int Window::Run() {
     MSG msg = { 0 };
