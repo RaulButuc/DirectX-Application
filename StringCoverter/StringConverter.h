@@ -16,24 +16,25 @@ using std::string;
 
 namespace StringHelper {
 
-  template <typename _StrS, typename _StrT>
+  template <typename StrT, typename StrS>
   class StringConverter {
 
     public:
-      static _StrS convert(_StrT);
+      static StrT convert(StrS);
 
   };
 
   /**
-   *  Convert a string of type _StrT to a string of type _StrS.
+   *  Convert a string of type StrS to a string of type StrT.
    *
-   *  @param _str The string of type _StrT that is to be converted.
-   *  @return The converted string into the desired format (assuming long pointer constant type).
+   *  @param str The string of type StrS that is to be converted.
+   *  @return The converted string into the desired format (long pointer constant type assumed).
+   *         
    */
-  template <typename _StrS, typename _StrT>
-  _StrS StringConverter<_StrS, _StrT>::convert(_StrT _str) {
-    wchar_t* wString = new wchar_t[2 * strlen(_str.c_str())];
-    MultiByteToWideChar(CP_ACP, 0, _str.c_str(), -1, wString, 2 * strlen(_str.c_str()));
+  template <typename StrT, typename StrS>
+  StrT StringConverter<StrT, StrS>::convert(StrS str) {
+    wchar_t* wString = new wchar_t[2 * strlen(str.c_str())];
+    MultiByteToWideChar(CP_ACP, 0, str.c_str(), -1, wString, 2 * strlen(str.c_str()));
 
     return wString;
   }
